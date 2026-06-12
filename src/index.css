@@ -1,15 +1,74 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #565bac;
+  --color-primary-light: #7075c3;
+  --color-primary-dark: #3b3f78;
+  
+  --font-sans: "Inter", "system-ui", "-apple-system", sans-serif;
+}
+
+/* Custom scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  background-image:
-    linear-gradient(#e5e7eb 1px, transparent 1px),
-    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
-
+/* Custom Grid Background Utility */
+.bg-grid-pattern {
   background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Vignette Mask Overlay */
+.vignette-mask {
+  mask-image: radial-gradient(ellipse at center, transparent 10%, black 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 10%, black 80%);
+}
+
+/* Custom Corner Pulse Highlight styles for Hero text */
+.corner-pulse-container {
+  position: relative;
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
+  margin: 0 0.125rem;
+  border-radius: 0.125rem;
+  transition: all 0.2s ease;
+}
+
+/* Glassmorphic Cards */
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card-dark {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
