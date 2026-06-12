@@ -301,12 +301,12 @@ function Alzheimer() {
               target="_blank"
               rel="noreferrer"
               className="
-      px-6 py-3
-      border
-      rounded-xl
-      hover:bg-gray-50
-      transition
-      "
+                px-6 py-3
+                border
+                rounded-xl
+                hover:bg-gray-50
+                transition
+                "
             >
               View Source Code
             </a>
@@ -314,43 +314,59 @@ function Alzheimer() {
         </div>
         {/* NAVIGATION */}
 
-<div className="grid md:grid-cols-2 gap-6 mt-10">
+        <div className="grid md:grid-cols-2 gap-6 mt-10">
+          <div></div>
 
-  <div></div>
+          {/* NAVIGATION */}
 
-  <Link
-    to="/projects/devinsight-ai"
-    className="
-    border
-    rounded-2xl
-    p-8
-    hover:border-purple-400
-    transition
-    "
-  >
-    <p className="text-sm text-gray-500 mb-2">
-      NEXT →
-    </p>
+          <div className="grid md:grid-cols-2 gap-6 mt-10">
+            <Link
+              to="/"
+              className="
+                border
+                rounded-2xl
+                p-8
+                hover:border-purple-400
+                transition
+                "
+            >
+              <p className="text-sm text-gray-500 mb-2">← PREVIOUS</p>
 
-    <h4 className="text-xl font-semibold">
-      DevInsight AI
-    </h4>
-  </Link>
+              <h4 className="text-xl font-semibold">Portfolio Website</h4>
+            </Link>
 
-</div>
+            <Link
+              to="/projects/multi-agent-research"
+              className="
+              border
+              rounded-2xl
+              p-8
+              hover:border-purple-400
+              transition
+              text-right
+              "
+            >
+              <p className="text-sm text-gray-500 mb-2">NEXT →</p>
 
-<div className="text-center mt-10">
-  <Link
-    to="/"
-    className="
-    text-gray-600
-    hover:text-purple-600
-    "
-  >
-    ← Back To All Projects
-  </Link>
-</div>
+              <h4 className="text-xl font-semibold">
+                Multi-Agent Research System
+              </h4>
+            </Link>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              to="/#projects"
+              className="
+              text-gray-600
+              hover:text-purple-600
+              "
+            >
+              ← Back To All Projects
+            </Link>
+          </div>
         </div>
+      </div>
     </section>
   );
 }

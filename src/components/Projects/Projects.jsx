@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
+
 function Projects() {
   const projects = [
+    {
+      category: "FULL STACK",
+      title: "Portfolio Website",
+      description:
+        "Personal portfolio showcasing AI, Machine Learning, LLM, and software engineering projects with detailed project case studies.",
+      tech: ["React", "Tailwind CSS", "JavaScript", "Vite"],
+      link: "/",
+    },
+
     {
       category: "AI/ML",
       title: "Alzheimer's Disease Detection",
@@ -11,8 +21,25 @@ function Projects() {
     },
 
     {
+      category: "AGENTIC AI",
+      title: "Multi-Agent Research System",
+      status: "Live",
+      description:
+        "Production-deployed research platform where 4 AI agents collaborate to search, analyze, synthesize, and critique information using LangChain, Gemini, and Tavily.",
+      tech: [
+        "LangChain",
+        "Gemini",
+        "Tavily",
+        "Streamlit",
+        "BeautifulSoup",
+      ],
+      link: "/projects/multi-agent-research",
+    },
+
+    {
       category: "LLM",
-      title: "DevInsightAI",
+      title: "DevInsight AI",
+      status: "Live",
       description:
         "AI-powered GitHub profile analyzer that evaluates repositories, skills and developer strengths.",
       tech: ["FastAPI", "GitHub API", "LLM", "Python"],
@@ -25,7 +52,7 @@ function Projects() {
       description:
         "Analyzes YouTube comments and classifies sentiments using NLP and machine learning models.",
       tech: ["NLTK", "TF-IDF", "Scikit-Learn", "Flask"],
-      link: "https://github.com/VikasPatil64/SocialMedia_Sentiment_Analysis",
+      link: "/projects/youtube-sentiment",
     },
 
     {
@@ -34,7 +61,7 @@ function Projects() {
       description:
         "Machine learning application that predicts heart disease risk using clinical parameters.",
       tech: ["Python", "Scikit-Learn", "Pandas", "Flask"],
-      link: "https://github.com/VikasPatil64/heart_disease_detection",
+      link: "/projects/heart-disease",
     },
   ];
 
@@ -42,6 +69,7 @@ function Projects() {
     <section id="projects" className="py-32">
       <div className="max-w-7xl mx-auto px-6">
         {/* HEADER */}
+
         <div className="mb-24">
           <div className="flex justify-end">
             <h2 className="text-6xl md:text-7xl font-bold text-right">
@@ -56,6 +84,7 @@ function Projects() {
             </p>
           </div>
         </div>
+
         {/* PROJECT GRID */}
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -63,6 +92,7 @@ function Projects() {
             <div
               key={index}
               className="
+                group
                 relative
                 overflow-hidden
                 bg-white/70
@@ -80,12 +110,26 @@ function Projects() {
             >
               {/* Top Purple Line */}
 
-              <div className="absolute top-0 left-0 h-1 w-full bg-purple-300" />
+              <div
+                className="
+                absolute
+                top-0
+                left-0
+                h-1
+                w-full
+                bg-purple-300
+                transition-all
+                duration-300
+                group-hover:bg-purple-600
+              "
+              />
 
               {/* Number + Category */}
 
               <div className="flex justify-between items-center mb-6">
-                <p className="text-sm text-gray-400">0{index + 1}</p>
+                <p className="text-sm text-gray-400">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
 
                 <span
                   className="
@@ -104,7 +148,7 @@ function Projects() {
 
               {/* Title */}
 
-              <div className="group">
+              <div>
                 <h3
                   className="
                   text-3xl
@@ -165,43 +209,40 @@ function Projects() {
 
               <hr className="my-6 border-gray-200" />
 
-              {/* Link */}
+              {/* Footer */}
 
-              {project.link.startsWith("/") ? (
+              <div className="flex items-center justify-between">
                 <Link
                   to={project.link}
                   className="
-    text-purple-600
-    font-medium
-    inline-flex
-    items-center
-    gap-2
-    transition-all
-    duration-300
-    hover:gap-3
-    "
+                  text-purple-600
+                  font-medium
+                  inline-flex
+                  items-center
+                  gap-2
+                  transition-all
+                  duration-300
+                  hover:gap-3
+                  "
                 >
                   View Project →
                 </Link>
-              ) : (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="
-                    text-purple-600
-                    font-medium
-                    inline-flex
-                    items-center
-                    gap-2
-                    transition-all
-                    duration-300
-                    hover:gap-3
-                    "
-                >
-                  View Project →
-                </a>
-              )}
+
+                {project.status === "Live" && (
+                  <div className="flex items-center gap-2 text-green-600 text-sm font-medium">
+                    <span
+                      className="
+                      w-2
+                      h-2
+                      bg-green-500
+                      rounded-full
+                      animate-pulse
+                      "
+                    ></span>
+                    Live
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
