@@ -1,28 +1,61 @@
 export const projects = [
-  {
+   {
     id: "portfolio",
     title: "My Portfolio Website",
     slug: "portfolio",
     category: "Web Development",
-    shortDesc: "Personal developer portfolio inspired by Tushar's structure, built with React, Tailwind, and Framer Motion.",
+
+    shortDesc:
+      "Personal developer portfolio built with React, Tailwind CSS, Framer Motion, and a scalable data-driven architecture.",
+
     description:
-      "A recruiter-friendly developer portfolio with animated sections, project cards, coding profiles, education details, and a contact form.",
-    techStack: ["React", "Tailwind CSS", "Framer Motion", "EmailJS", "Vite"],
+      "A modern developer portfolio designed to showcase projects, technical skills, education, coding profiles, and contact information through a clean, responsive, and recruiter-friendly user experience.",
+
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "React Router",
+      "EmailJS",
+      "Vite"
+    ],
+
     githubUrl: "https://github.com/VikasPatil64/my_portfolio",
-    liveDemoUrl: null,
+
+    liveDemoUrl:
+      "https://my-portfolio-lime-zeta-hk2x8luql4.vercel.app",
+
     featured: true,
-    metrics: ["Responsive UI", "Single-page flow", "Dynamic detail routing"],
+
+    metrics: [
+      "Responsive UI",
+      "Dynamic Project Pages",
+      "Data-Driven Architecture"
+    ],
+
     features: [
-      "Tushar-inspired section structure without Experience, Achievements, or POR.",
-      "Clean data-driven project cards and detail pages.",
-      "Contact form prepared for EmailJS deployment.",
+      "Fully responsive design optimized for desktop, tablet, and mobile devices.",
+      "Dynamic project detail pages powered by React Router and centralized project data.",
+      "Integrated EmailJS contact form for direct communication.",
+      "Smooth animations and transitions using Framer Motion.",
+      "Clean and scalable component-based architecture."
     ],
+
     architecture: [
-      "React Router handles the home route and dynamic project detail route.",
-      "Portfolio content is centralized in src/data for easier maintenance.",
-      "Reusable section, card, and layout components keep the UI consistent.",
+      "React Router manages navigation between the homepage and dynamic project detail pages.",
+      "Project information is centralized in data files, allowing content updates without modifying UI components.",
+      "Reusable React components ensure design consistency and maintainability.",
+      "EmailJS enables direct contact form submissions without requiring a backend server.",
+      "Vercel handles deployment and continuous delivery through GitHub integration."
     ],
-    future: ["Add final resume content.", "Add project screenshots.", "Deploy and connect EmailJS keys."],
+
+    future: [
+      "Add project screenshots and visual case studies.",
+      "Introduce a technical blog section for sharing AI and development insights.",
+      "Implement project filtering and search functionality.",
+      "Enhance accessibility and performance optimization scores.",
+      "Add analytics to track portfolio engagement and visitor interactions."
+    ]
   },
   {
     id: "alzheimers",

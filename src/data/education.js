@@ -39,7 +39,7 @@ export const education = {
       title: "Database Management Systems",
       description: "Relational database modeling, query optimization, indexing, and SQL transactions.",
       score: "8 CGPA",
-      progress: 80,
+      progress: 70,
     },
     {
       title: "Computer Networks & Cloud Computing",
