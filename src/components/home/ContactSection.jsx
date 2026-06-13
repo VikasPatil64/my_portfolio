@@ -19,10 +19,10 @@ export default function ContactSection() {
 
     try {
       await sendContactEmail({
-        from_name: name,
-        from_email: email,
+        name: name,
+        email: email,
         message: message,
-        to_name: "Vikas Pathade"
+
       });
       setStatus("success");
       setName("");
