@@ -11,6 +11,6 @@ export const personal = {
   phone: "+91 7020149568",
   resumeUrl: "/Vikas_Pathade_Resume.pdf",
   github: "https://github.com/VikasPatil64",
-  linkedin: "www.linkedin.com/in/vikaspathade",
+  linkedin: "https://www.linkedin.com/in/vikaspathade",
   leetcode: "https://leetcode.com/u/vikas_pathade04/",
 };
