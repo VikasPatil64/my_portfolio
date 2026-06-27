@@ -1,7 +1,7 @@
 export const projects = [
    {
     id: "portfolio",
-    title: "My Portfolio Website",
+    title: "My Portfolio",
     slug: "portfolio",
     category: "Web Development",
 
@@ -82,7 +82,6 @@ export const projects = [
     ],
     future: ["Add a public demo.", "Improve explainability.", "Add clinical validation notes."],
     
-    // Rich details for Tushar-style project page
     problem: "Early Alzheimer's diagnosis often requires extensive clinical evaluation, cognitive testing, and specialist intervention. However, speech and language impairments are among the earliest observable indicators of cognitive decline. The challenge is that speech, language, and clinical information exist in different formats and cannot be directly combined. This project explores how multimodal deep learning can fuse these complementary signals to support early dementia screening.",
     solutionDetails: [
       { title: "Speech Intelligence", desc: "Whisper transcribes speech recordings while WavLM extracts rich acoustic representations from raw audio." },
@@ -112,29 +111,67 @@ export const projects = [
     ]
   },
   {
-    id: "multiagent",
-    title: "Multi-Agent Research System",
-    slug: "multi-agent-system",
-    category: "AI Agents",
-    shortDesc: "Four AI agents collaborate to search, read, write and critique research.",
-    description:
-      "An agentic research workflow where specialized agents work together to produce structured research outputs.",
-    techStack: ["LangChain", "Gemini API", "Streamlit", "Tavily", "BeautifulSoup"],
-    githubUrl: "https://github.com/VikasPatil64/multi-agent-research-system",
-    liveDemoUrl: "https://multi-agent-research-system-qdoyjgqgemonvxswd6ejwh.streamlit.app",
-    featured: true,
-    metrics: ["4 agents", "Research workflow", "Live Streamlit demo"],
-    features: [
-      "Search agent collects relevant sources.",
-      "Reader agent extracts useful information.",
-      "Writer and critic agents improve the final response.",
-    ],
-    architecture: [
-      "User prompt enters the Streamlit interface.",
-      "Agent chain coordinates research, writing, and critique.",
-      "Final output is presented as a structured research summary.",
-    ],
-    future: ["Add citation quality checks.", "Persist research history.", "Add export to PDF."],
+  id: "multiagent",
+  title: "Multi-Agent Research System",
+  slug: "multi-agent-system",
+  category: "AI Agents",
+  shortDesc: "Four AI agents collaborate to search, read, write, and critique research with a self-improvement loop.",
+  description:
+    "An agentic research workflow where specialized agents work together to produce structured research outputs. Features a self-improvement loop where the Critic agent evaluates reports and triggers revisions until quality improves.",
+  techStack: [
+    "LangChain",
+    "Gemini API",
+    "Streamlit",
+    "Tavily",
+    "BeautifulSoup",
+    "Pydantic",
+    "Asyncio"
+  ],
+  githubUrl: "https://github.com/VikasPatil64/multi-agent-research-system",
+  liveDemoUrl: "https://multi-agent-research-system-qdoyjgqgemonvxswd6ejwh.streamlit.app",
+  featured: true,
+  metrics: ["4 agents", "Self-improvement loop", "Live Streamlit demo"],
+
+  features: [
+    "Search agent collects 5 authoritative sources using Tavily API.",
+    "Reader agent extracts and cleans content using parallel async scraping.",
+    "Critic agent evaluates report quality (0-10) and triggers revisions if score is below 7.0.",
+    "Revision loop improves reports up to 2 times, keeping only the best version.",
+    "Streamlit UI shows real-time progress, score progression, and revision history.",
+  ],
+
+  architectureSteps: [
+    "User Input",
+    "Search Agent",
+    "Reader Agent",
+    "Writer Agent",
+    "Critic Agent",
+    "Revision Loop",
+    "Final Output"
+  ],
+
+  engineeringDecisions: [
+    { title: "Why LangChain?", desc: "Enables agentic tool-calling and structured orchestration." },
+    { title: "Why Parallel Scraping?", desc: "Reduces latency by scraping multiple URLs concurrently." },
+    { title: "Why Revision Loop?", desc: "Ensures report quality improves through iterative feedback." }
+  ],
+
+  challengesSolved: [
+    "API rate limits handled with daily quota tracking (18/18).",
+    "URL extraction from agent responses using regex patterns.",
+    "Score regression prevention by keeping only improved versions.",
+    "Encoding errors during scraping fixed with multi-encoding fallback.",
+    "Failed URLs handled by trying up to 3+ sources."
+  ],
+
+  impact: "Transforms manual research into an autonomous agentic workflow. The self-improvement loop demonstrates a practical application of iterative AI refinement, making the system more reliable and reducing hallucination risks.",
+
+  futureScope: [
+    "Add Redis caching for repeated queries.",
+    "Implement RAG for source-grounded responses.",
+    "Add support for PDF/document uploads.",
+    "Deploy as Docker container with API endpoints."
+  ]
   },
   {
     id: "devinsight",
@@ -202,7 +239,7 @@ export const projects = [
     description:
       "A natural language processing project for classifying social media sentiment across collected comments and posts.",
     techStack: ["Python", "Flask", "YouTube API", "Scikit-learn", "TF-IDF", "Logistic Regression", "SVM"],
-    githubUrl: "https://github.com/VikasPatil64/SocialMedia_Sentiment_Analysis",
+    githubUrl: "https://github.com/VikasPatil64/youtube_sentiment_analysis",
     liveDemoUrl: null,
     featured: false,
     metrics: ["NLP pipeline", "YouTube data", "81% classification accuracy"],
