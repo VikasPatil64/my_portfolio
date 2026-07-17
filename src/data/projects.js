@@ -198,7 +198,6 @@ export const projects = [
     ],
     future: ["Improve scoring transparency.", "Add profile comparisons.", "Add authentication."],
     
-    // Rich details for Tushar-style project page
     problem: "GitHub profiles contain valuable information about developer activity, repository quality, technology expertise, and project impact. However, manually reviewing repositories, stars, forks, activity history, and language usage is time-consuming and often inconsistent. Developers struggle to understand how recruiters perceive their profiles, while hiring teams spend significant effort evaluating technical portfolios. The absence of structured analytics makes objective developer assessment difficult.",
     solutionDetails: [
       { title: "GitHub Data Collection", desc: "Fetches profile and repository information directly from GitHub REST APIs in real time." },
@@ -279,6 +278,56 @@ export const projects = [
       "Prediction output summarizes the classification details.",
     ],
     future: ["Add model explainability.", "Create a demo UI.", "Add dataset documentation."],
+  },
+  {
+    id: "ai-product-recommender",
+    title: "AI Product Recommendation System",
+    slug: "ai-product-recommender",
+    category: "AI / Web App",
+    shortDesc: "AI-powered product recommendation web app with natural language search powered by Google Gemini.",
+    description:
+      "A React-based web application that leverages Google Gemini API to deliver intelligent product recommendations, natural language search, and similar product suggestions through a modern card-based UI.",
+    techStack: ["React", "Vite", "JavaScript", "Google Gemini API", "Vercel"],
+    githubUrl: "https://github.com/VikasPatil64/ai-product-recommendation-system",
+    liveDemoUrl: "https://ai-product-recommender-khaki.vercel.app/",
+    featured: false,
+    metrics: ["AI-Powered Search", "Gemini API", "Deployed on Vercel", "Responsive UI"],
+    features: [
+      "Natural language search powered by Google Gemini API for intuitive product discovery.",
+      "AI-generated personalized product recommendations based on user queries.",
+      "Similar product suggestions to enhance browsing and increase discoverability.",
+      "Responsive, card-based UI optimized for desktop and mobile devices.",
+      "Deployed on Vercel for fast, globally distributed access.",
+    ],
+    problem: "Traditional e-commerce search relies on exact keyword matching, making it difficult for users to discover relevant products through natural queries. Users often struggle to find what they want when they cannot recall exact product names or categories. This project explores how large language models can transform product discovery by understanding intent, context, and natural language.",
+    solutionDetails: [
+      { title: "Natural Language Understanding", desc: "Google Gemini API interprets user queries in natural language, understanding intent rather than relying on exact keyword matching." },
+      { title: "AI Recommendations Engine", desc: "Gemini generates contextually relevant product suggestions tailored to the user's expressed needs and preferences." },
+      { title: "Similar Product Discovery", desc: "The system surfaces related products to help users explore alternatives and make informed choices." },
+      { title: "Responsive Frontend", desc: "React and Vite power a fast, modern card-based interface that works seamlessly across devices." }
+    ],
+    architectureSteps: ["User Query", "Gemini API", "Recommendation Engine", "Product Catalog Filter", "Responsive Card UI"],
+    engineeringDecisions: [
+      { title: "Why Google Gemini API?", desc: "Provides powerful natural language understanding and generative AI capabilities for intelligent product recommendations." },
+      { title: "Why React + Vite?", desc: "Enables fast development, hot module replacement, and optimized production builds for a smooth user experience." },
+      { title: "Why Vercel?", desc: "Offers seamless deployment with GitHub integration, global CDN, and zero-configuration hosting for React apps." }
+    ],
+    challengesSolved: [
+      "Transforming vague or natural language queries into meaningful product recommendations.",
+      "Handling Gemini API response parsing to extract structured product data.",
+      "Designing a clean, responsive card UI that adapts across screen sizes.",
+      "Managing API quota limits during development and testing.",
+      "Ensuring fast load times while integrating a live AI API backend.",
+    ],
+    impact: "This project demonstrates how generative AI can fundamentally improve product discovery in e-commerce by moving beyond keyword search. By leveraging Google Gemini's language understanding, the application provides a natural, conversational interface for exploring products — showcasing a practical and scalable approach to AI-assisted shopping experiences.",
+    futureScope: [
+      "Add user authentication and personalized recommendation history.",
+      "Integrate a real product database or third-party e-commerce API (e.g., Shopify, Amazon).",
+      "Implement voice search for hands-free product discovery.",
+      "Add comparison feature to evaluate multiple products side by side.",
+      "Build an admin dashboard to manage product catalog and monitor query analytics.",
+      "Enhance recommendation diversity with multi-turn conversation support.",
+    ]
   },
 ];
 
