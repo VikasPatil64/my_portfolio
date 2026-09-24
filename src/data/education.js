@@ -4,7 +4,7 @@ export const education = {
       name: "CSMSS Chh. Shahu College of Engineering",
       degree: "B.Tech in Artificial Intelligence & Data Science",
       period: "2023 - 2027",
-      score: "CGPA: 7.98/10",
+      score: "CGPA: 8.39/10",
       color: "#4F46E5",
     },
     {

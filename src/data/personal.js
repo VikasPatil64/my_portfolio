@@ -13,4 +13,5 @@ export const personal = {
   github: "https://github.com/VikasPatil64",
   linkedin: "https://www.linkedin.com/in/vikaspathade",
   leetcode: "https://leetcode.com/u/vikas_pathade04/",
+  instagram: "https://www.instagram.com/vikaspathade_/",
 };
